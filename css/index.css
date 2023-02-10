@@ -1,0 +1,42 @@
+
+#home {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+   left: 0;
+    right: 0;
+    top: 0;
+   bottom: 0;
+ 
+  }
+  #text1 {
+    position:centre;
+    color: #131212;
+    white-space: nowrap;
+    font-size: 6.5vw;
+    z-index: 9;
+    transform: translateY(10px);
+    text-align: center;
+    margin-bottom: 90px;
+    margin-top: 250px;
+  }
+
+  #button-reglog {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #0a0a0a;
+    color: white;
+    font-size: 1.5em;
+   
+    transform: translateY(-50px);
+    margin-right: 10px;
+    margin-left: 10px;
+  
+  }
+ 
+  body {
+    text-align: center;
+  }
