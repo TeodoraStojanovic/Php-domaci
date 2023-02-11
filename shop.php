@@ -147,7 +147,7 @@ if ($rezultat->num_rows == 0) {
                 <div class="modal-body">
                     <div class="container">
                         <form action="#" method="post" id="izmeniForm">
-                            <h3 style="color: black">Izmeni proizvod</h3>
+                            <h3 style="color: black">Izmeni knjigu</h3>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">

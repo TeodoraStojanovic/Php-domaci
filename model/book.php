@@ -46,4 +46,17 @@ class Book
         $query = "SELECT * FROM books ORDER BY naslov ASC";
         return $conn->query($query);
     }
+
+    public static function getById($id, mysqli $conn)
+    {
+        $query = "SELECT * FROM books WHERE id=$id";
+        $array = array();
+        if ($result = $conn->query($query)) {
+
+            while ($row = $result->fetch_array(1)) {
+                $array[] = $row;
+            }
+        }
+        return $array;
+    }
 }
