@@ -36,4 +36,14 @@ class Book
         $query = "INSERT INTO books (naslov,autor,zanr,cena,username) VALUES ('$bookQ->naslov', '$bookQ->autor', '$bookQ->zanr', '$bookQ->cena', '$bookQ->username')";
         return $conn->query($query);
     }
+    public static function update($idU, $naslovU, $autorU, $zanrU, $cenaU,$usernameU, mysqli $conn)
+    {
+        $query = "UPDATE books SET naslov='$naslovU', autor='$autorU', zanr='$zanrU',cena='$cenaU',username='$usernameU' WHERE id='$idU'";
+        return $conn->query($query);
+    }
+    public static function sort(mysqli $conn)
+    {
+        $query = "SELECT * FROM books ORDER BY naslov ASC";
+        return $conn->query($query);
+    }
 }
