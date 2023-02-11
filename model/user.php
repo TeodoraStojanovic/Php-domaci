@@ -21,7 +21,7 @@
         public static function registerUser($nameR, $surnameR, $usernameR, $passwordR, mysqli $conn)
         {
             $query = "INSERT INTO user(`name`, `surname`, `username`, `password`) 
-            VALUES('$nameR', '$surname', '$usernameR', '$password')";
+            VALUES('$nameR', '$surnameR', '$usernameR', '$passwordR')";
             return $conn->query($query);
         }
     }
