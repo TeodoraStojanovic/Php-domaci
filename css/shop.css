@@ -83,4 +83,25 @@ body{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.modal-body{
+    background-color: rgb(132, 83, 62);
+}
+
+.modal-header{
+    background-color: rgb(63, 44, 44);
+
+}
+
+.form-control{
+    background-color: lightgrey;
+}
+.bg-light{
+    margin: 0px;
+}
+.container{
+width: auto;
+height: auto;
+
+}
+
 

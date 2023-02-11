@@ -16,3 +16,25 @@ $('#btn-obrisi').click(function(){
     });
 }
 )
+
+$('#dodajForm').submit(function(event){
+    event.preventDefault();
+
+    const $form = $(this);
+
+    const serijalizovan = $form.serialize();
+    req = $.ajax({
+        url: "handler/add.php",
+        type: "post",
+        data: serijalizovan
+    });
+
+    req.done(function(){
+            location.reload();
+    });
+
+    req.fail(function(textStatus, errorThrown){
+        console.error("Greska je: "+textStatus, errorThrown);
+    });
+}
+)

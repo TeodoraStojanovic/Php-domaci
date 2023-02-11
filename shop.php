@@ -56,7 +56,7 @@ if ($rezultat->num_rows == 0) {
             while ($red = $rezultat->fetch_array()) {
             ?>
                 <tr id="tr-<?php echo $red["id"] ?>">
-                    <td><?php echo $red["naziv"] ?></td>
+                    <td><?php echo $red["naslov"] ?></td>
                     <td><?php echo $red["autor"] ?></td>
                     <td><?php echo $red["zanr"] ?></td>
                     <td><?php echo $red["cena"] ?></td>
@@ -90,8 +90,55 @@ if ($rezultat->num_rows == 0) {
 </div>
 
 </div>
+<!-- dodaj -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="modal fade" id="dodajModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="#" method="post" id="dodajForm">
+                            <h3 style="color: black; text-align:left">Dodaj knjigu</h3>
+                            <div class="row">
+                                <div class="col-md-11 ">
+                                    <div class="form-group" style="display: none;">
+                                        <input id="username" type="text" name="username" class="form-control" value="<?php echo $_SESSION['user_admin'] ?>" readonly />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Naslov</label>
+                                        <input type="text" style="border: 1px solid black margin-left: 30px " name="naslov" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Autor</label>
+                                        <input type="text" style="border: 1px solid black" name="autor" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Zanr</label>
+                                        <input type="text" style="border: 1px solid black" name="zanr" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Cena</label>
+                                        <input type="text" style="border: 1px solid black" name="cena" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="btnDodaj" type="submit" class="btn btn-success btn-block" style="background-color:  rgb(63, 44, 44); border: 1px solid black;">Dodaj</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
 <script src="js/script.js"></script>
 </body>
 </html>
