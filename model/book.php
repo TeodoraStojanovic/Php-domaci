@@ -25,4 +25,9 @@ class Book
         return $conn->query($query);
     }
 
+    public function deleteById(mysqli $conn)
+    {
+        $query = "DELETE FROM books WHERE id=$this->id";
+        return $conn->query($query);
+    }
 }
