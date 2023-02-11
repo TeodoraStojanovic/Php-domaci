@@ -3,6 +3,7 @@
 require 'dbbroker.php';
 require 'model/book.php';
 
+
 session_start();
 if (!isset($_SESSION['user_admin'])) {
     header('Location: index.php');
@@ -88,7 +89,8 @@ if ($rezultat->num_rows == 0) {
 <div class=" col-md-3" style="text-align: right;">
     <button id="btn-sortiraj" class="btn btn-primary btn-block" onclick="sortTable()">Sortiraj</button>
 </div>
-
+<a href="logout.php" class="label label-danger" style="font-size:16px; background-color: rgb(63, 44, 44); position: fixed; bottom:0; right:0; float:right">Logout</a>
+ </div>
 </div>
 <!-- dodaj -->
 
@@ -135,10 +137,53 @@ if ($rezultat->num_rows == 0) {
             </div>
         </div>
     </div>
+<!-- izmeni -->
+    <div class="modal fade" id="izmeniModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="#" method="post" id="izmeniForm">
+                            <h3 style="color: black">Izmeni proizvod</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input id="username" type="text" name="username" class="form-control" value="<?php echo $_SESSION['user_admin'] ?>" readonly />
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="id" type="text" name="id" class="form-control" placeholder="Id *" value="" readonly />
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="naslov" type="text" name="naslov" class="form-control" placeholder="Naslov*" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="autor" type="text" name="autor" class="form-control" placeholder="Autor *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="zanr" type="text" name="zanr" class="form-control" placeholder="Zanr *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="cena" type="text" name="cena" class="form-control" placeholder="Cena *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                    <div class="form-group">
+                                        <button id="btnIzmeni" type="submit" class="btn btn-success btn-block" style="color: white; background-color:  rgb(63, 44, 44); border: 1px solid white"> Izmeni</button>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-<script src="js/script.js"></script>
+     <script src="js/script.js"></script>
 </body>
 </html>
