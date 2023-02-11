@@ -19,4 +19,10 @@ class Book
         $this->username = $username;
     }
 
+    public static function getAll($conn)
+    {
+        $query = "SELECT * FROM books";
+        return $conn->query($query);
+    }
+
 }
